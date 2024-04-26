@@ -17,4 +17,31 @@ BONUS
 =====
 
 Tehtävä 102-7: Kirjoita ohjelma, joka kysyy 2-3 asiaa ja tulostaa lyhyen muutaman rivin tarinan, jossa näitä asioita on käytetty.
+
+
+#1
+name = input("What is your name?: ")
+print(name)
+
+#2
+name = input("What is your name?: ")
+print(name, name)
+
+#3
+name = input("What is your name?: ")
+name = input("What is your name?: ")
+print(name)
+
+#4
+name = input("What is your name?: ")
+print(f"!{name}@")
+
+#5
+first_name, last_name = input("What is your first and last name?: ").split()
+print(f'"Nimesi on <{first_name}> {last_name}."')
 """
+
+#6 
+name = input("What is your name?: ")
+street, city = input("What is your address? Separate street and city by a comma: ").split(sep=', ')
+print(f"{street, "\n", city)
