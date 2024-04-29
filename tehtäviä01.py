@@ -455,5 +455,154 @@ merkkijono_reversed=''
 for i in range(len(merkkijono),0,-1):
     merkkijono_reversed = merkkijono_reversed + (merkkijono[i-1])
 print(merkkijono_reversed)
-"""
+
 #111-8
+merkkijono = input("Anna merkkijono: ")
+for x in merkkijono:
+    print(x)
+
+#111-9
+merkkijono = input("Anna merkkijono: ")
+order = 2 # 0=vasemma,1=keski,2=oikea
+if order==0:
+    tulos = merkkijono + (20-len(merkkijono))*"="
+elif order==1:
+    tulos = int(10-(len(merkkijono)/2))*"=" + merkkijono + int(10-(len(merkkijono)/2)+0.5)*"="
+elif order==2:
+    tulos = (20-len(merkkijono))*"=" + merkkijono
+print(tulos)
+print(len(tulos))
+
+#111-10
+merkkijono = input("Anna merkkijono: ")
+vokaalit = ['a','e','y','u','i','o','ä','ö']
+vokaalit_count = 0
+for x in merkkijono:
+    if x in vokaalit:
+        vokaalit_count+=1
+print(vokaalit_count)
+
+
+Tehtävä 112-1: Etsi toinen "i" sanasta "Seinäjoki"
+
+Tehtävä 112-2: Etsi ja ilmoita kaikki indeksit "i" sanalle sanasta "saippuakauppias"
+
+Tehtävä 112-3: Etsi kaikki kolmemerkkiset osajonot, jotka alkavat kirjaimella "a" sanasta "saippuakauppias"
+
+
+#Small ex
+salaisuus = "saaaaalaaasana"
+
+arvaus = input("Anna kirjain: ")
+print(f"tekstissä on {salaisuus.count(arvaus)} kpl krijainta {arvaus}")
+
+for count,value in enumerate(salaisuus):
+    if value == arvaus:
+        print(f"indexissä {count} on krijain {arvaus}")
+        
+lista = enumerate(salaisuus)
+print(list(lista)) 
+
+iter=0
+for value in range(len(salaisuus)):
+    if salaisuus[value]==arvaus:
+        print(f"Indexissä {value} on kirjain {arvaus}")
+    iter+=1
+
+
+#112-1
+i_count=0
+sana = "Seinäjoki"
+for x in sana:
+    if x=='i':
+        i_count+=1
+if i_count==2:
+    print("Toinen 'i' löytyy!")
+else:
+    print("More or less than 2 'i'")
+ 
+#112-2
+sana = 'saippuakauppias'
+for count,letter in enumerate(sana):
+    if letter == 'i':
+        print(f"indexissä {count} on 'i' kirjain")
+
+#112-3
+sana = "saippuakauppias"
+for position,letter in enumerate(sana):
+    #print(f"Pos {position} is a {letter}")
+    if letter == 'a':
+        if position + 2 < len(sana):
+            print("Word is " + letter + sana[position+1] + sana[position+2])
+
+
+Tehtävä 113-1: Tee ohjelma, joka laskee kertotaulun lukuun X asti, eli (esim 2) 1x1, 1xX, Xx1, XxX...
+
+Tehtävä 113-2: Tee ohjelma, jolle syötät lauseen. Tulosta jokaisen sanan ensimmäinen kirjain.
+
+Tehtävä 113-3: Tee ohjelma, joka laskee annetun luvun X kertoman (esim 4) 1*2*3*X = ...
+
+Tehtävä 113-4: Tee ohjelma, joka tulostaa kaikki luvut käyttäjän antamaan lukuun asti.
+Tee ohjelma niin, että kukin pari lukuja esitetään suurempi ensin.
+
+Tehtävä 113-5: Tee ohjelma, joka tulostaa kaikki luvut käyttäjän antamaan lukuun asti.
+Tee ohjelma niin, että ensin esitetään 1, sitten X, sitten 2, sitten X-1 jne...
+
+#113-1
+luku = int(input("Anna luku? "))
+laskuriA, laskuriB = 1, 1
+while laskuriA <= luku:
+    while laskuriB <= luku:
+        print(f"{laskuriA}*{laskuriB} = {laskuriA*laskuriB}")
+        laskuriB+=1
+    laskuriB=1
+    laskuriA+=1
+
+#113-2
+lause = input("Syötä lause: ")
+print(lause[0])
+for position, letter in enumerate(lause):
+    if letter == ' ':
+        print(lause[position+1])
+
+#113-3
+luku = int(input("Anna luku? "))
+laskuri = 1
+tulo = 1
+teksti = ""
+while laskuri <= luku:
+    teksti = teksti + str(laskuri) + "*"
+    tulo *= laskuri
+    print(f"{laskuri} saa arvoksi {teksti[:-1]} = { tulo }")
+    laskuri += 1
+
+luku = int(input("Anna luku? "))
+tulo = 1
+teksti = ''
+for i in range(1,luku+1):
+    teksti = teksti + str(i)+"*"
+    tulo *=i
+    print(f"{i} saa arvoksi {teksti[:-1]} = {tulo}")
+
+#113-4
+luku = int(input("Anna luku? "))
+luku_list = list(range(1, luku+1))
+teksti = ''
+for i in range(0, len(luku_list), 2):
+    luku_list[i], luku_list[i+1] = luku_list[i+1], luku_list[i] 
+    teksti = teksti + ' ' + str(luku_list[i]) + ' ' + str(luku_list[i+1])
+print(luku_list)
+print(teksti)
+"""
+#113-5
+luku = int(input("Anna luku? "))
+luku_list = list(range(1,luku+1))
+j=1
+for i in range(len(luku_list)):
+    if i%2!=0:
+        luku_list[i] = luku-int(i/2)
+    if i%2==0:
+        luku_list[i]=j
+        j+=1
+    
+print(luku_list)
