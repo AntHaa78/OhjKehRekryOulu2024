@@ -593,7 +593,7 @@ for i in range(0, len(luku_list), 2):
     teksti = teksti + ' ' + str(luku_list[i]) + ' ' + str(luku_list[i+1])
 print(luku_list)
 print(teksti)
-"""
+
 #113-5
 luku = int(input("Anna luku? "))
 luku_list = list(range(1,luku+1))
@@ -606,3 +606,53 @@ for i in range(len(luku_list)):
         j+=1
     
 print(luku_list)
+
+arr = ['sunday', 'monday', 'tuesday', 'wednesday']
+ 
+# without using asterisk, unpacking
+print (*arr) # = print(' '.join(map(str,arr)))
+"""
+
+# Numebr guessing game:
+
+import random
+random.seed()
+
+def guessing_number(result):
+    num_wrong_answers = 0
+    while num_wrong_answers < 10:
+        answer = int(input("\nGuess a number between 1-100! "))
+
+        if answer == result:
+            break
+
+        elif answer-result < -5:
+            print("\nThe number is larger than {}, try again!".format(answer))
+            num_wrong_answers+=1
+            print("You now have",10-num_wrong_answers, "attempts left")
+            
+        elif answer-result > 5:
+            print("\nThe number is smaller than {}, try again!".format(answer))
+            num_wrong_answers+=1
+            print("You now have",10-num_wrong_answers, "attempts left")
+
+        elif abs(answer-result) < 5:
+            if answer > result:
+                print("\nThe number is smaller than {}, but you're burning!!".format(answer))
+            elif answer < result:
+                print("\nThe number is larger than {}, but you're burning!!".format(answer))
+            num_wrong_answers+=1
+            print("You now have",10-num_wrong_answers, "attempts left")
+    
+    if num_wrong_answers < 10:
+        print("\nCongratulations, you guessed it! The number was: ", number)
+    elif num_wrong_answers==10:
+        print("\nYou lost the game!")
+
+while True:
+    number = random.randrange(1,101)
+    #print("The number to guess is", number) # for testing
+    guessing_number(number)
+    play_again = input("\nType 'y' to play again: ")
+    if play_again != 'y':
+        break
