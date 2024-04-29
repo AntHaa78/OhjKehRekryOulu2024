@@ -158,10 +158,234 @@ else:
 #105-5
 temp = float(input("What is the termperature?: "))
 print(f"The temperature in Far is {(temp*9/5)+32}")
-"""
+<<<<<<< Updated upstream
 
-#--------------------------------------------- TOADD
-"""
+
+Tehtävä 106-1: Tee ohjelma, jossa kirjoitetaan merkkijono ja ilmoitetaan sen pituus.
+
+Tehtävä 106-2: Tee ohjelma, jossa kirjoitetaan liukuluku ja ohjelma ilmoittaa sen pyöristyksen kokonaisluvuksi.
+
+Tehtävä 106-3: Tee ohjelma, jolle syötetään luku Celsiusasteina. Ohjelma ilmoittaa arvon Fahrenheitteina. Etsi kaava netistä.
+
+
+#106-1
+string ="fnewfnwe"
+print(len(string))
+
+#106-2 
+number = float(input("Enter a floating number: "))
+print("The number rounded is ", int(number+0.5))
+
+#106-3
+# Sama kuin 105-5
+
+
+Tehtävä 107-1: Tee ohjelma, joka ilmoittaa monta pistettä tuli jääkiekossa voiton, tasapelin tai tappion tullessa.
+
+Tehtävä 107-2: Tee ohjelma, johon syötetään 2 lukua, kerro kumpi on suurempi vai oliko kyseessä sama luku.
+
+Tehtävä 107-3: Tee ohjelma, johon syötetään 2 nimeä ja ikää. Kerro kumpi henkilö on vanhempi.
+
+Tehtävä 107-4: Tee, ohjelma, johon syötetään kaksi merkkijonoa. Kerro kumpi on ensimmäinen ja viimeinen.
+
+
+#107-1 
+tulos = input("Miten meni (voitto, tasapeli tai tappio)?: ")
+if tulos == 'voitto':
+    print(f"Se oli voitto -> 3 pistettä")
+elif tulos == 'tasapeli':
+    print(f"Se oli tasapeli -> 1 piste")
+elif tulos == 'tappio':
+    print(f"Se oli tappio -> 0 piste")
+else:
+    print("Tulos not recognized")
+
+#107-2
+num1, num2 = [int(x) for x in input("Enter 2 numbers: ").split()]
+if num1 > num2:
+    print(f"{num1} is > {num2}")
+elif num1==num2:
+    print(f"{num1} is equal to {num2}")
+else:
+    print(f"{num1} is < {num2}")
+
+#107-3
+name1, age1 = input("H1, what is your name and your age: ").split()
+name2, age2 = input("H23, what is your name and your age: ").split()
+if int(age1) > int(age2):
+    print(f"{name1} is older than {name2}")
+elif int(age1)==int(age2):
+    print("You are the same age!")
+else:
+    print(f"{name2} is older than {name1}")
+
+#107-4
+string1, string2 = input("Enter 2 strings: ").split()
+if string1 < string2:
+    print(f"{string1} is 'first'")
+else:
+    print(f"{string1} is 'second'")
+
+    
+Tehtävä 108-1: Tee ohjelma, joka kysyy luvun ja sanoo että alle 10 on pieni ja että negatiivinen luku on negatiivinen. Muuten luku on suuri.
+
+Tehtävä 108-2: Tee ohjelma, joka ilmoittaa onko syötetty nimi joku Aku Ankan veljenpojista.
+
+Tehtävä 108-3: Tee ohjelma, joka ilmoittaa onko syötetty kokonaisluku jaollinen viidellä.
+
+Tehtävä 108-4: Tee ohjelma, joka laskee onko kyseessä karkausvuosi.
+
+#108-1
+luku = int(input("Enter a number: "))
+if luku < 0:
+    print("Luku on negatiivinen")
+elif 0 <= luku < 10:
+    print("Luku on pieni")
+else:
+    print("Luku on pieni")
+
+#108-2
+veljenpojat = ("Tupu", "Hupu", "Lupu", "Riri", "Fifi", "Loulou")
+nimi = input("Anna nimi: ")
+if nimi in veljenpojat:
+    print(f"{nimi} on yksi Aku Ankan veljenpojista")
+else:
+    print("Syötetty nimi ei ole yhtä Aku Ankan veljenpojista")
+
+#108-3
+num = int(input("Enter a numer: "))
+if num%5==0:
+    print(num, "is divisible by 5")
+else:
+    print(num, "is not divible by 5")
+
+#108-4
+year = int(input("Enter a year: "))
+if year%4==0:
+    if year%400==0:
+        print(f"{year} is a leap year")
+    elif year%100==0:
+        print(f"{year} is not a leap year (centuries exception)")
+    else:
+        print(f"{year} is a leap year")
+else:
+    print(f"{year} is not a leap year")
+
+
+# Tehtävä 109-1: Tee toistolause, joka jatkuu kunnes käyttäjä kirjoittaa "ei"
+
+# Tehtävä 109-2: Tee toistolause, joka jatkuu kunnes käyttäjä kirjoittaa luvun välillä 1 ja 100
+
+# Tehtävä 109-3: Syötä salasana. Tee toistolause, joka jatkuu kunnes käyttäjä kirjoittaa <salasana>.
+
+# Tehtävä 109-4: Syötä salanumero. Tee toistolause, joka jatkuu kunnes käyttäjä kirjoittaa <salanumero>.
+Pysäytä tehtävä, jos yrityksiä on enemmän kuin kolme.
+
+# Tehtävä 109-5: Tee lähtölaskenta arvosta 8 arvoon 1, jonka jälkeen kirjoita "Laukaisu!"
+
+# Tehtävä 109-6: Tee toistolause, johon syötetään lukuja kunnes käyttäjä kirjoittaa -1. Laske tämän jälkeen keskiarvo.
+
+#109-1
+answer = ''
+while answer != 'ei':
+    answer = input("What is your answer: ")
+
+#109-2
+answer = 0
+while answer not in range(1,101):
+    answer = int(input("What is your answer: "))
+
+#109-3
+salasana = input("Choose salasana: ")
+answer = ''
+while answer!=salasana:
+    answer = input("Enter salasana: ")
+print("Pw correct")
+
+#109-4
+salanumero = int(input("Choose salanumero: "))
+answer = ''
+tries=0
+while answer!=salanumero and tries<3:
+    answer = int(input("Enter salanumero: "))
+    tries+=1
+if tries<3:
+    print("Pw correct")
+else:
+    print("Number of tries exceeded")
+
+#109-5
+x = 8
+while x!=0:
+    print(x)
+    x-=1
+print("laukaisu")
+
+#109-6
+number_list=[]
+while True:
+    number = int(input("Enter a number, -1 ends it: "))
+    number_list.append(number)
+    if number ==-1:
+        break
+print("The average is:", sum(number_list)/len(number_list))
+
+
+
+Tehtävä 110-1: Tulosta joka kolmas luku välillä 1 ja 50.
+
+Tehtävä 110-2: Tee uusiksi lähtölaskentatehtävä niin että siinä ei ole while True: riviä 
+vaan jotain muunlainen rivi.
+
+Tehtävä 110-3: Tulosta luvut 1stä eteenpäin käyttäjän antamaan lukuun asti.
+
+Tehtävä 110-4: Tulosta aluksi 1 ja sitten seuraava luku niin että se on edellisen luvun arvo kerrottuna kahdella.
+
+Tehtävä 110-5: kysy kaksi lukua ja tulosta sen potenssit arvosta 0 toiseen lukuun asti
+
+Tehtävä 110-6: Kysy käyttäjältä luku ja tee ohjelma joka laskee 1+2+3... kunnes summa on käyttäjältä saatu luku tai sitä pienempi edellinen luku. Näytä tiedot "1+2+3..." tavalla.
+
+#110-1
+for x in range(1,50,3):
+    print(x)
+
+#110-2 = 109-5
+
+#110-3
+number = int(input("Giva a number bigger than 1: "))
+for x in range(1,number+1):
+#x=1
+#while x <= number:
+    print(x)
+    #x+=1
+
+#110-4
+x = 1
+while True:
+    print(x)
+    answer = input("Continue?: ")
+    if answer=='n':
+        break
+    x=2*x
+
+#110-5
+num1, num2 = [int(x) for x in input("Enter 2 numbers: ").split()]
+for x in range(1,num2+1):
+    print(pow(num1,x))
+
+#110-6
+number = int(input("Enter a number: "))
+result_sum=0
+print("0 ",end='')
+for x in range(1,number):
+    print("+",x,end=' ')
+    result_sum+=x
+    if result_sum>=number:
+        print(f"\nThe sum is {result_sum} which is greater than or equal to {number}")
+        break
+
+        
+
 Tehtävä 111-1: Piirrä joulukuusi * merkeillä. Syötä ensin joulukuusen korkeus numerona.
 
 Tehtävä 111-2: Syötä merkkijono ja toistojen lukumäärä. Tulosta sitten merkkijono toistettuna.
