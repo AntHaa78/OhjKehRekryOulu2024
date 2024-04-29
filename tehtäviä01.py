@@ -159,3 +159,77 @@ else:
 temp = float(input("What is the termperature?: "))
 print(f"The temperature in Far is {(temp*9/5)+32}")
 """
+
+#--------------------------------------------- TOADD
+"""
+Tehtävä 111-1: Piirrä joulukuusi * merkeillä. Syötä ensin joulukuusen korkeus numerona.
+
+Tehtävä 111-2: Syötä merkkijono ja toistojen lukumäärä. Tulosta sitten merkkijono toistettuna.
+
+Tehtävä 111-3: Syötä merkkijono ja tulosta se. Lisää vielä "=" merkeillä merkkijonon pituinen alleviivaus.
+
+Tehtävä 111-4: Syötä kaksi merkkijonoa ja kerro kumpi on pitempi
+
+Tehtävä 111-5: Syötä merkkijono ja tulosta sen merkit viimeisestä ensimmäiseen
+
+Tehtävä 111-6: Syötä merkkijono ja tulosta sen toinen ja toiseksi viimeinen merkki
+
+Tehtävä 111-7: Syötä merkkijono ja tee siitä uusi merkkijono, jonka merkit ovat päinvastoin
+
+Tehtävä 111-8: Syötä merkkijono ja tulosta se niin, että kullakin rivillä on yhdestä pituuteen verran kirjaimia
+
+Tehtävä 111-9: Tee 20 merkkinen merkkijono "=" merkeistä. Syötä merkkijono, jono korvaa = merkkejä. 
+Tämä merkkijono on lisäksi tasattu oikealle, vasemmalle tai keskelle valinnan mukaan.
+
+Trehtävä 111-10: Syötä merkkijono ja etsi kaikki vokaalit
+
+
+#111-1
+korkeus = int(input("Anna puun korkeus: "))
+i = 0
+j = 0
+while i<int((korkeus/2)+0.5):
+    line = " "*(korkeus-i) + "*"*(i*2+1)
+    print(line)
+    i+=1
+while j<int(korkeus/2):
+    line2 = " "*(korkeus) + "*"
+    print(line2)
+    j+=1
+
+#111-2
+merkkijono = input("Anna merkkijono: ")
+toisto = int(input("Anna toistojen lukumäärä: "))
+print(f"{merkkijono} kertaa {toisto} on {merkkijono*toisto}")
+
+#111-3
+merkkijono = input("Anna merkkijono: ")
+print(merkkijono)
+print(f"{len(merkkijono)*'='}")
+
+#111-4
+merkkijono1, merkkijono2 = input("Anna 2 merkkijonoa: ")
+if len(merkkijono1)>len(merkkijono2):
+    print("1 on pitempi kuin 2")
+elif len(merkkijono1)==len(merkkijono2):
+    print("1 ja 2 ovat yhtä pitkät")
+else:
+    print("1 on pienempi kuin 2")
+
+#111-5
+merkkijono = input("Anna merkkijono: ")
+for i in range(len(merkkijono),0,-1):
+    print(merkkijono[i-1],end='')
+
+#111-6
+merkkijono = input("Anna merkkijono: ")
+print(f"toinen merkki: {merkkijono[1]}, toiseksi viimeinen merkki: {merkkijono[-2]}"
+
+#111-7
+merkkijono = input("Anna merkkijono: ")
+merkkijono_reversed=''
+for i in range(len(merkkijono),0,-1):
+    merkkijono_reversed = merkkijono_reversed + (merkkijono[i-1])
+print(merkkijono_reversed)
+"""
+#111-8
