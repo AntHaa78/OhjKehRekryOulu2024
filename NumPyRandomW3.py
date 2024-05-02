@@ -74,10 +74,46 @@ plt.show()
 It has three parameters:
 loc - (Mean) where the peak of the bell exists.
 scale - (Standard Deviation) how flat the graph distribution should be.
-size - The shape of the returned array."""
+size - The shape of the returned array.
 
 x = np.random.normal(loc=1, scale=2, size=(3,5))
 print(x)
 
 sns.distplot(np.random.normal(size=500, loc=3, scale=0.5), hist=False)
+plt.show()
+
+
+# Discrete/Binomial Distribution
+It has three parameters:
+n - number of trials.
+p - probability of occurence of each trial (e.g. for toss of a coin 0.5 each).
+size - The shape of the returned array.
+
+x = np.random.binomial(n=10, p=0.5, size=500)
+#print(x)
+while True:
+    answer = input("Type? (1: histplot-2:distplot-3:displot)")
+    if answer == '1':
+        sns.histplot(x, kde=True)
+        plt.show()
+    elif answer == '2':
+        sns.distplot(x, hist=True, kde=False)
+        plt.show()
+    elif answer == '3':
+        sns.displot(x)
+        plt.show()
+"""
+
+# Poisson Distribution
+"""It estimates how many times an event can happen in a specified time. e.g.
+ If someone eats twice a day what is the probability he will eat thrice?
+It has two parameters:
+lam - rate or known number of occurrences e.g. 2 for above problem.
+size - The shape of the returned array.
+"""
+
+x = np.random.poisson(lam=50, size=1000)
+y = np.random.normal(loc=50, scale=7, size=1000)
+sns.histplot(x, kde=True)
+sns.displot(y, label='normal')
 plt.show()

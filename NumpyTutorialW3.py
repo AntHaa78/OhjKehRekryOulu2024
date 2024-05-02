@@ -1,5 +1,6 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
+"""
 arr = np.array([10, 2, 3, 4, 5])
 arr_string = np.array(("This is a string"), dtype='S')
 arr_string2 = np.array(['apple', 'banana', 'cherry'])
@@ -43,7 +44,7 @@ print(arr2D[::, 1:3], "\n")
 print(arr1D.dtype)
 print(arr_string2.dtype, "\n")
 
-""" COnverting datatype: astype() method
+COnverting datatype: astype() method
 i - integer
 b - boolean
 u - unsigned integer
@@ -55,7 +56,7 @@ O - object
 S - string
 U - unicode string
 V - fixed chunk of memory for other type ( void )
-"""
+
 
 arr_float = np.array([1.1, 2.1, 3.1])
 newarr = arr_float.astype('i') # or newarr = arr.astype(int)
@@ -65,13 +66,13 @@ print(newarr.dtype, "-----", newarr_bool.dtype, "\n")
 
 
 # NumPy Array Copy vs View
-"""The main difference between a copy and a view of an array is that the copy is a new array, and the view is just a view of the original array.
+The main difference between a copy and a view of an array is that the copy is a new array, and the view is just a view of the original array.
 
 The copy owns the data and any changes made to the copy will not affect original array, and any changes made to the original array will not affect the copy.
 
 The view does not own the data and any changes made to the view will affect the original array, and any changes made to the original array will affect the view.
 
-"""
+
 #COPY:
 x = arr.copy()
 arr[0] = 666
@@ -266,3 +267,18 @@ newarr = arr[filter_arr]
 print(filter_arr)
 print(newarr)
 
+-------------------------------------------------------------------
+
+ """
+#Numpy koulutus
+
+dummyarrayA = np.array([1,2,3,4,5])
+dummyarrayB = np.array([6,7,8,9,10])
+finalarray = np.concatenate((dummyarrayA,dummyarrayB))
+filtteri = finalarray > 4
+hauluttuarray = finalarray[filtteri]
+print(hauluttuarray)
+
+# numpylla voidaan luoda array, jonka alkaa arvolla X ja päättyy arvoon Y-1
+# tämä luo array -5,-4,-3,-2,-1,0,1,2,3,4,5
+vapaamuotoinenarray = np.arange(-5,6)

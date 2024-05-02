@@ -613,7 +613,7 @@ arr = ['sunday', 'monday', 'tuesday', 'wednesday']
 print (*arr) # = print(' '.join(map(str,arr)))
 """
 
-# Numebr guessing game:
+# Number guessing game:
 
 import random
 random.seed()
