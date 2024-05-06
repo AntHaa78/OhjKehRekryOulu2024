@@ -1,4 +1,4 @@
-#LUOKKO
+#LUOKKA
 
 """ class Computer:
     def __init__(self, mobile, model, OS) -> None:
@@ -146,7 +146,7 @@ class BankAccount:
             print(f"\n{self.name.upper()} your new balance is {self.saldo} - {abs(amount)} = {self.saldo+amount} €")
         elif amount >=0:
             print(f"\n{self.name.upper()} your new balance is {self.saldo} + {amount} = {self.saldo+amount} €")
-        self.saldo = self.saldo + amount
+        self.saldo += amount
 
     def accountinfo(self):
         print(f"\n{(self.name).upper()}, your account ID {self.id} has a balance of {self.saldo} € ")
@@ -196,13 +196,51 @@ def deposit():
             found_account = True
             account_id = int(input("What is your acc ID?: "))
             if account_id == account.id:
-                sum = int(input("Sum to desposit: "))
+                sum = int(input("Sum to desposit(negative sum=withdraw): "))
                 account.changebalance(sum)
             else:
                 print("\nWrong ID")
     if found_account == False:
         print("\nERROR -- Account not found -- ")
 
+
+""" while True:
+    answer = input("\nWhat do you want to do? \n1 Add account\n2 Show account info for one account\n3 Show account info for all accounts\n4 Change balance\n0 Quit banking program\n")
+    if answer == '1':
+        addaccount()
+    elif answer == '2':
+        show_one_account()
+    elif answer == '3':
+        showaccountall()
+    elif answer == '4':
+        deposit()        
+    elif answer == '0':
+        break
+    else:
+        print("\nCommand not recognised") """
+
+
+# Task OOP-06:
+# Add child class CreditAccount, with credit attribute
+# Change accountinfo() to show credit
+# add setcredit() function to change credit
+
+class CreditAccount(BankAccount):
+    def __init__(self, name: str, saldo: float, id: int, credit) -> None:
+        super().__init__(name, saldo, id)
+        self.credit = credit
+    
+    def accountinfo(self):
+        print(f"\n{(self.name).upper()}, your account ID {self.id} has a balance of {self.saldo} €, and credit: {self.credit}")
+
+    def setcredit(self, amount, choice):
+        if choice == 'a':
+            self.credit +=amount
+        elif choice == 'w':
+            self.credit -= amount
+
+testichild = CreditAccount("Iines", 111.44, 111111, 12000.00)
+accountlist.append(testichild)
 
 while True:
     answer = input("\nWhat do you want to do? \n1 Add account\n2 Show account info for one account\n3 Show account info for all accounts\n4 Change balance\n0 Quit banking program\n")
@@ -218,6 +256,3 @@ while True:
         break
     else:
         print("\nCommand not recognised")
-
-#name_list = [x.name for x in accountlist]
-#print(name_list)

@@ -615,7 +615,7 @@ print (*arr) # = print(' '.join(map(str,arr)))
 
 # Number guessing game:
 
-import random
+""" import random
 random.seed()
 
 def guessing_number(result):
@@ -654,5 +654,144 @@ while True:
     #print("The number to guess is", number) # for testing
     guessing_number(number)
     play_again = input("\nType 'y' to play again: ")
-    if play_again != 'y':
+    if play_again != 'y': 
         break
+"""
+
+# Tehtävä 114-6: Tee ohjelma, jossa on funktio, joka ottaa kaksi lukua ja piirtää XxY alueen "o" merkillä.
+
+def piirtaa(x,y):
+    i=0
+    while i < y:
+        print("o"*x)
+        i+=1
+
+#piirtaa(3,5)
+
+#Tehtävä 114-7: Tee ohjelma, jossa on funktio, joka ottaa kaksi lukua ja piirtää XxY alueen aluksi "1" ja sitten "0" merkeillä shakkilautana.
+
+""" def sheikkilauta(x,y):
+    for i in range(y):
+        print("\r")
+        if i%2==0:
+            for j in range(x):
+                if j%2==0:
+                    print("1", end='')
+                elif j%2!=0:
+                    print("0", end='')
+        elif i%2!=0:
+            for j in range(x):
+                if j%2==0:
+                    print("0", end='')
+                elif j%2!=0:
+                    print("1", end='')
+ """
+
+#sheikkilauta(10,10)
+
+#Tehtävä 114-8: Tee ohjelma, jossa on funktio, joka ottaa merkkijonon ja piirtää siitä sananeliön
+
+def piirrasananelio2(sana):
+    rivi = sana*2
+    for i in range(len(sana)):
+        print(rivi[i:len(sana)+i])
+
+#piirrasananelio2('testi')
+
+# Tehtävä 115-1: Tee ohjelma, jonka funktio palauttaa anntuista parametreista pienimmän
+
+def bigger(a,b):
+    if a > b:
+        return a
+    elif b > a:
+        return b
+#print(bigger(1,2))
+
+# Tehtävä 115-2: Tee ohjelma, jonka funktio ilmoittaa onko annettu merkki sama tai ei (True tai false)
+def onkosama(str1,str2):
+    return str1==str2
+#print(onkosama('lala','lalo'))
+
+# Tehtävä 115-3: Tee ohjelma, jossa on funktio, joka piirtää parametrina annettua merkkiä annetun luvun verran.
+# Tee funktio joka piirtää näin neliön annettua merkkiä.
+
+def draw(merkki, luku):
+    print(merkki*luku)
+    print('\n')
+    for i in range(luku):
+        print(merkki*luku)
+
+#draw('*',4)
+
+# Tehtävä 116-1: Tee ohjelma, johon kuuluu lista = [0,0,0,0,0,0,0,0,0,0] 
+# syötetään indeksi 0+ ja luku arvoksi. Täytä listaa ja tulosta joka syötön jälkeen listan sisältö.
+
+""" lista = [0,0,0,0,0,0,0,0,0,0]
+indeksi = int(input("Anna indeksi? "))
+while abs(indeksi) < len(lista):
+    arvo = int(input("Anna arvo? "))
+    lista[indeksi] = arvo
+    print(lista)
+    indeksi = int(input("Anna indeksi? "))
+print("Index out of bound") """
+
+# Tehtävä 116-2: Tee ohjelma, johon syötetään X kappaletta numeroita. 
+# Tulosta luotu lista lopuksi.
+""" lista=[]
+while True:
+    try: 
+        number = int(input("Test: "))
+        lista.append(number)
+    except ValueError:
+        print("ERROR: --- Not a number ---")
+        break
+#print(isinstance('lol',int))
+print(lista) """
+    
+# Tehtävä 116-3: Tee ohjelma, jossa on lista, johon voi lisätä ja poistaa arvoja.
+
+""" lista = list(range(10))
+print(lista)
+answer = input("Lisätä (l) vai Poistaa (p): ")
+while answer == 'l' or answer == 'p':
+    if answer == 'l':
+        lisattu = input("Mitä lisataan: ")
+        lista.append(lisattu)
+    elif answer == 'p':
+        index = int(input("Mikä indeksi? "))
+        lista.pop(index)
+    print(lista)
+    answer = input("Lisätä (l) vai Poistaa (p): ") """
+
+# Tehtävä 116-4: Tee ohjelma, johon syötetään sanoja. Pysäytä se, jos sama sana tuli kahdesti.
+
+""" lista=[]
+duplicate = False
+while duplicate==False:
+    sana = input("Syötä sana: ")
+    lista.append(sana)
+    print(lista)
+    if len(lista) != len(set(lista)): #smart trick, convert to set. other method count duplicates
+        print("Duplicates found!")
+        duplicate = True """
+
+# Tehtävä 116-5: Tee ohjelma, johon syötetään numeroita. 
+# Tulosta joka numeron jälkeen lista sekä sen järjestetty versio.
+
+""" lista = []
+while True:
+    number = int(input("Söytä numero: "))
+    lista.append(number)
+    print(sorted(lista))
+ """
+# Tehtävä 116-7: Tee ohjelma, jossa on funktio, joka ottaa listan parametrina. 
+# Järjestä lista ja anna se paluuarvona
+""" list_test = [1,5,9,7,6,2]
+
+def sorting(lista):
+    return sorted(lista)
+
+print(sorting(list_test))
+ """
+# Tehtävä 117-3: Tulosta "*" niin, että kullekin riville tulee se lukumäärä, 
+# joka on sanottu listan elementin arvona.
