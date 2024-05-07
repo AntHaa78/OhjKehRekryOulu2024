@@ -162,7 +162,7 @@ void UserInput(){
 }
 
 int difficulty(){
-    cout << "Choose difficulty:\n1) Easy\2)Medium\n3)Hard\n";
+    cout << "Choose difficulty:\n1) Easy\n2)Medium\n3)Hard\n";
     int diff;
     int speed;
     cin >> diff;
