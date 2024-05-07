@@ -13,7 +13,7 @@ const int height = 10;
 int x, y;
 
 // coord of snake
-int snakeTailx[100], snakeTaily[100];
+int snakeTailx[width+height], snakeTaily[width+height];
 
 // length of snake 
 int snakeTailLen;
