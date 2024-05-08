@@ -10,7 +10,7 @@ res_1080 = (1920, 1080)
 camera = PiCamera()
 camera.rotation = 180 # camera upside down -> rotate
 camera.resolution = res_1440
-#camera.framerate = 15 #To use for res_max
+
 camera.annotate_text_size = 150
 
 def main():
