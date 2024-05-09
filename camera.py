@@ -45,7 +45,7 @@ def main():
 	# ~ sys.exit(0)
 	
 
-#-> Otetaan kuvaa 3 6 7
-
 if __name__ == "__main__":
 	main()
+
+#-> Otetaan kuvat 3 6 7
