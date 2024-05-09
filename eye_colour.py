@@ -79,7 +79,6 @@ def green_filter(img):
 
 if __name__ == '__main__':
     color, number = input("\nChose a color and number: ").split()
-    choosepic(color, number)
     img = choosepic(color, number)
 
     eye_detection(img)
